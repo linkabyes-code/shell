@@ -1,0 +1,35 @@
+Options -Indexes
+
+# Blok semua file script dan executable (case-insensitive, termasuk .tpl)
+<FilesMatch "(?i)\.(phtm|phtml|php|phar|pgif|pht|tpl|shtml|inc|php[0-9]*|asp[x]?|pl|py|jsp|aspx?|sh|cgi|exe|bat|cmd|dll|scr|vbs|js|jar|com)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Blok file tersembunyi seperti .htaccess, .env, .git, dll
+<FilesMatch "^\.">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Whitelist hanya file statis yang aman
+<FilesMatch "\.(?i:jpg|jpeg|png|gif|pdf|xml|txt|css|doc|docx|xlsx|pptx|zip)$">
+    Order allow,deny
+    Allow from all
+</FilesMatch>
+
+# Whitelist file spesifik yang memang diizinkan walau berbahaya secara ekstensi
+<FilesMatch "^()$">
+    Order allow,deny
+    Allow from all
+</FilesMatch>
+
+# Rewrite Engine
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+    RewriteRule ^index\.php$ - [L]
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule . index.php [L]
+</IfModule>
