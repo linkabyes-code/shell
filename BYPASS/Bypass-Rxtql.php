@@ -276,7 +276,7 @@ $Array = [
 	echo "
 	<html>
 	<head>
-		<title>Shell Mr. SHUJI</title>
+		<title>Shell Mr. RXTQL</title>
 		<meta charset='UTF-8'>
 		<meta name='author' content='BYPASS - RXTQL'>
 		<meta name='viewport' content='width=device-width, initial-scale=0.70'>
