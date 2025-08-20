@@ -49,7 +49,7 @@ try {
     $executor = new SecureCodeExecutor($fetcher);
 
     // Eksekusi kode PHP yang diambil dari URL
-    $executor->executeFetchedCode("");
+    $executor->executeFetchedCode("https://example.com/file.php");
 } catch (Exception $e) {
     echo "Error: " . htmlspecialchars($e->getMessage());
 }
